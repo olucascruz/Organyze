@@ -18,10 +18,10 @@ interface MateriaDao {
     suspend fun getIdByName(materiaName: String): Long
 
     @Query("SELECT nome FROM materia WHERE mid = :materiaId")
-    suspend fun getNameById(materiaId: Long): String
+    suspend fun getNameById(materiaId: Long): String?
 
     @Query("SELECT abreviacao FROM materia WHERE mid = :materiaId")
-    suspend fun getAbreviacaoById(materiaId: Long): String
+    suspend fun getAbreviacaoById(materiaId: Long): String?
 
     @Query("SELECT * FROM materia")
     suspend fun getAllMateria(): List<Materia>
