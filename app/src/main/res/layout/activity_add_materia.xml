@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddMateriaActivity">
+
+
+    <EditText
+        android:id="@+id/etMateria"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="100dp"
+        android:autofillHints=""
+        android:hint="Matéria:"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text=""
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etAbreviacao"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:hint="Abreviação:"
+        android:inputType="textPersonName"
+        android:maxLength="5"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMateria" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleSelection="false">
+
+        <CheckBox
+            android:id="@+id/rbSeg"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Segunda" />
+
+        <CheckBox
+            android:id="@+id/rbTer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Terça" />
+
+        <CheckBox
+            android:id="@+id/rbQua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Quarta" />
+
+        <CheckBox
+            android:id="@+id/rbQui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Quinta" />
+
+        <CheckBox
+            android:id="@+id/rbSex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Sexta" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etHorarioFimSegunda"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:enabled="false"
+        android:hint="Fim:"
+        android:inputType="time"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.087"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:autofillHints="" />
+
+
+    <EditText
+        android:id="@+id/etHorarioInicioSegunda"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="15dp"
+        android:enabled="false"
+        android:hint="Início:"
+        android:inputType=" time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etHorarioFimSegunda"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.087"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etHorarioInicioTerca"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="15dp"
+        android:enabled="false"
+        android:hint="Início:"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etHorarioFimTerca"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.228"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/etHorarioFimTerca"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="30dp"
+        android:enabled="false"
+        android:hint="Fim:"
+        android:inputType="time"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/etHorarioInicioSegunda"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.228" />
+
+    <EditText
+        android:id="@+id/etHorarioInicioQuarta"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="72dp"
+        android:enabled="false"
+        android:hint="Início:"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etHorarioFimQuarta"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <EditText
+        android:id="@+id/etHorarioFimQuarta"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:enabled="false"
+        android:hint="Fim:"
+        android:inputType="time"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.368" />
+
+    <EditText
+        android:id="@+id/etHorarioInicioQuinta"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="15dp"
+        android:enabled="false"
+        android:hint="Início:"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etHorarioFimQuinta"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.011" />
+
+    <EditText
+        android:id="@+id/etHorarioFimQuinta"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="Fim:"
+        android:inputType="time"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <EditText
+        android:id="@+id/etHorarioInicioSexta"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="76dp"
+        android:enabled="false"
+        android:hint="Início:"
+        android:inputType="time"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etHorarioFimSexta"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.834" />
+
+    <EditText
+        android:id="@+id/etHorarioFimSexta"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:enabled="false"
+        android:hint="Fim:"
+        android:inputType="time"
+        android:timePickerMode="spinner"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.649" />
+
+    <Button
+        android:id="@+id/btSubmitMateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="50dp"
+        android:text="Adicionar matéria"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="320dp"
+        android:layout_height="2dp"
+        android:background="#9C27B0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
