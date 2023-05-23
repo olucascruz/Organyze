@@ -55,10 +55,10 @@ class MateriasActivity : AppCompatActivity() {
 
     private fun addDataSource(){
         val materiaDao = AppDatabase.getInstance(this).materiaDao()
-        GlobalScope.launch {
+        Thread {
             val materias = materiaDao.getAllMateria()
             this@MateriasActivity.materiaAdapter.setDataSet(materias)
-        }
+        }.start()
 
     }
 

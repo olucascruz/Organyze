@@ -8,11 +8,11 @@ import com.example.organyze.database.models.Horario
 @Dao
 interface HorarioDao {
     @Insert
-    suspend fun insert(horario: Horario): Long
+    fun insert(horario: Horario): Long
 
     @Query("SELECT COUNT(hid) FROM horario")
-    suspend fun getTotalItems() : Long
+    fun getTotalItems() : Long
 
     @Query("SELECT * from horario WHERE diaSemana = :diaBuscado")
-    suspend fun  getHorarioByDay(diaBuscado: String): List<Horario>
+    fun  getHorarioByDay(diaBuscado: String): List<Horario>
 }

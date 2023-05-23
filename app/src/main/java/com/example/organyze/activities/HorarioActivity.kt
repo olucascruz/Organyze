@@ -74,14 +74,14 @@ class HorarioActivity : AppCompatActivity() {
     }
 
         fun GetHorarios(dia: String){
-            GlobalScope.launch {
+            Thread {
                 val dao = AppDatabase.getInstance(applicationContext).horarioDao()
-                this@HorarioActivity.horarios = dao.getHorarioByDay(dia)
+                this.horarios = dao.getHorarioByDay(dia)
                 runOnUiThread {
-                    horariosAdapter.setDataSet(this@HorarioActivity.horarios)
+                    horariosAdapter.setDataSet(this.horarios)
                     horariosAdapter.notifyDataSetChanged()
                 }
-            }
+            }.start()
         }
 
         private fun initRecyclerView() {

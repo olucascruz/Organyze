@@ -9,20 +9,20 @@ import com.example.organyze.database.models.Materia
 interface MateriaDao {
 
     @Insert
-    suspend fun insert(materia: Materia): Long
+    fun insert(materia: Materia): Long
 
     @Query("SELECT COUNT(mid) FROM materia")
-    suspend fun getTotalItems(): Long
+    fun getTotalItems(): Long
 
     @Query("SELECT mid FROM materia WHERE nome = :materiaName")
-    suspend fun getIdByName(materiaName: String): Long
+    fun getIdByName(materiaName: String): Long
 
     @Query("SELECT nome FROM materia WHERE mid = :materiaId")
-    suspend fun getNameById(materiaId: Long): String?
+    fun getNameById(materiaId: Long): String?
 
     @Query("SELECT abreviacao FROM materia WHERE mid = :materiaId")
-    suspend fun getAbreviacaoById(materiaId: Long): String?
+    fun getAbreviacaoById(materiaId: Long): String?
 
     @Query("SELECT * FROM materia")
-    suspend fun getAllMateria(): List<Materia>
+    fun getAllMateria(): List<Materia>
 }

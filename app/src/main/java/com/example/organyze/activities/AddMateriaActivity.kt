@@ -36,42 +36,42 @@ class AddMateriaActivity : AppCompatActivity() {
             val horarioDao = bd.horarioDao()
             val materia =  Materia(nomeMateria, abreviacao)
 
-            GlobalScope.launch {
+            Thread {
                 val materiaId = materiaDao.insert(materia)
 
 
 
-                if (this@AddMateriaActivity.biding.rbSeg.isChecked) {
-                    val inicioSegunda = this@AddMateriaActivity.biding.etHorarioInicioSegunda.text.toString()
-                    val fimSegunda = this@AddMateriaActivity.biding.etHorarioFimSegunda.text.toString()
+                if (this.biding.rbSeg.isChecked) {
+                    val inicioSegunda = this.biding.etHorarioInicioSegunda.text.toString()
+                    val fimSegunda = this.biding.etHorarioFimSegunda.text.toString()
                     val horario = Horario("segunda", inicioSegunda, fimSegunda, materiaId)
                     horarioDao.insert(horario)
                 }
-                if (this@AddMateriaActivity.biding.rbTer.isChecked) {
-                    val inicioTerca = this@AddMateriaActivity.biding.etHorarioInicioTerca.text.toString()
-                    val fimTerca = this@AddMateriaActivity.biding.etHorarioFimTerca.text.toString()
+                if (this.biding.rbTer.isChecked) {
+                    val inicioTerca = this.biding.etHorarioInicioTerca.text.toString()
+                    val fimTerca = this.biding.etHorarioFimTerca.text.toString()
                     val horario = Horario("terça", inicioTerca, fimTerca, materiaId)
                     horarioDao.insert(horario)
                 }
-                if (this@AddMateriaActivity.biding.rbQua.isChecked) {
-                    val inicioQuarta = this@AddMateriaActivity.biding.etHorarioInicioQuarta.text.toString()
-                    val fimQuarta = this@AddMateriaActivity.biding.etHorarioFimQuarta.text.toString()
+                if (this.biding.rbQua.isChecked) {
+                    val inicioQuarta = this.biding.etHorarioInicioQuarta.text.toString()
+                    val fimQuarta = this.biding.etHorarioFimQuarta.text.toString()
                     val horario = Horario("quarta", inicioQuarta, fimQuarta, materiaId)
                     horarioDao.insert(horario)
                 }
-                if (this@AddMateriaActivity.biding.rbQui.isChecked) {
-                    val inicioQuinta = this@AddMateriaActivity.biding.etHorarioInicioQuinta.text.toString()
-                    val fimQuinta = this@AddMateriaActivity.biding.etHorarioFimQuinta.text.toString()
+                if (this.biding.rbQui.isChecked) {
+                    val inicioQuinta = this.biding.etHorarioInicioQuinta.text.toString()
+                    val fimQuinta = this.biding.etHorarioFimQuinta.text.toString()
                     val horario = Horario("quinta", inicioQuinta, fimQuinta, materiaId)
                     horarioDao.insert(horario)
                 }
-                if (this@AddMateriaActivity.biding.rbSex.isChecked) {
-                    val inicioSexta = this@AddMateriaActivity.biding.etHorarioInicioSexta.text.toString()
-                    val fimSexta = this@AddMateriaActivity.biding.etHorarioFimSexta.text.toString()
+                if (this.biding.rbSex.isChecked) {
+                    val inicioSexta = this.biding.etHorarioInicioSexta.text.toString()
+                    val fimSexta = this.biding.etHorarioFimSexta.text.toString()
                     val horario = Horario("sexta", inicioSexta, fimSexta, materiaId)
                     horarioDao.insert(horario)
                 }
-            }
+            }.start()
 
             val context = applicationContext // ou outra instância de Context
             val message = "Materia adicionada!"
