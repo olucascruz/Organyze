@@ -9,8 +9,6 @@ import com.example.organyze.database.AppDatabase
 import com.example.organyze.database.models.Horario
 import com.example.organyze.database.models.Materia
 import com.example.organyze.databinding.ActivityAddMateriaBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class AddMateriaActivity : AppCompatActivity() {
 

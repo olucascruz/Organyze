@@ -2,6 +2,7 @@ package com.example.organyze.database.daos
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.Delete
 import androidx.room.Query
 import com.example.organyze.database.models.Materia
 
@@ -25,4 +26,7 @@ interface MateriaDao {
 
     @Query("SELECT * FROM materia")
     fun getAllMateria(): List<Materia>
+
+    @Delete
+    fun delete(materia: Materia): Void
 }

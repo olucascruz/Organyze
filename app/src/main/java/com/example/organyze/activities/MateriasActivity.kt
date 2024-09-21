@@ -10,8 +10,6 @@ import com.example.organyze.classes.MateriasAdapter
 import com.example.organyze.database.AppDatabase
 import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class MateriasActivity : AppCompatActivity() {
 
@@ -63,7 +61,7 @@ class MateriasActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        this.materiaAdapter = MateriasAdapter()
+        this.materiaAdapter = MateriasAdapter(this)
 
         val listaMaterias = findViewById<RecyclerView>(R.id.rvListaMaterias)
 

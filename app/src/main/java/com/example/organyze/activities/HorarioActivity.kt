@@ -3,17 +3,13 @@ package com.example.organyze.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.organyze.R
 import com.example.organyze.classes.HorariosAdapter
-import com.example.organyze.classes.MateriasAdapter
 import com.example.organyze.database.AppDatabase
 import com.example.organyze.database.models.Horario
 import com.google.android.material.button.MaterialButtonToggleGroup
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class HorarioActivity : AppCompatActivity() {
 
